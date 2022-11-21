@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position sticky - vježba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="navbar">
+
+    <div class="container">
+
+        <div class="logo">
+            <a href="#">
+                <img src="logo.svg" alt="Overflow">
+            </a>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a class="nav-link" href="#">Home</a></li>
+                <li><a class="nav-link" href="#">About</a></li>
+                <li><a class="nav-link" href="#">Services</a></li>
+                <li><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="hambi">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="wrapper">
+
+    <section style="padding-top: 60px;">
+        <h1 style="max-width:615px;margin: 0 auto 80px;font-weight: 900;letter-spacing:1px;">Always Remember to close the div</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem ratione consequatur nostrum sint porro fuga quia perferendis libero aliquam mollitia a commodi sequi facere quasi, repellat vero animi iusto quam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magnam nisi beatae earum facilis, eius eos totam. Delectus reiciendis voluptatibus neque repellat veniam nulla, alias illo, illum, distinctio expedita magni.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corrupti animi aut eaque quasi consectetur, odio fugit laborum voluptatem quam temporibus, saepe nobis, commodi ab ratione esse vero doloremque a?</p>
+    </section>
+
+    <section class="sticky">
+
+        <div class="sticky-box">
+            <video loop autoplay muted>
+                <source src="work-together-with-your-team.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="scroll-box">
+
+            <div class="feature hidden">
+                <h2>Feature 1</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sapiente quia est corporis enim beatae assumenda, ducimus voluptatum, voluptates numquam neque cupiditate aut facilis repellat, earum dolorum quod odio corrupti.
+                </p>
+            </div>
+
+            <div class="feature hidden">
+                <h2>Feature 2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sapiente quia est corporis enim beatae assumenda, ducimus voluptatum, voluptates numquam neque cupiditate aut facilis repellat, earum dolorum quod odio corrupti.
+                </p>
+            </div>
+
+            <div class="feature hidden">
+                <h2>Feature 3</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sapiente quia est corporis enim beatae assumenda, ducimus voluptatum, voluptates numquam neque cupiditate aut facilis repellat, earum dolorum quod odio corrupti.
+                </p>
+            </div>
+
+            <div class="feature hidden">
+                <h2>Feature 4</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sapiente quia est corporis enim beatae assumenda, ducimus voluptatum, voluptates numquam neque cupiditate aut facilis repellat, earum dolorum quod odio corrupti.
+                </p>
+            </div>
+            
+        </div>
+    
+    </section>
+
+    <section class="hidden">
+        <h1>Bottom content</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem ratione consequatur nostrum sint porro fuga quia perferendis libero aliquam mollitia a commodi sequi facere quasi, repellat vero animi iusto quam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magnam nisi beatae earum facilis, eius eos totam. Delectus reiciendis voluptatibus neque repellat veniam nulla, alias illo, illum, distinctio expedita magni.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corrupti animi aut eaque quasi consectetur, odio fugit laborum voluptatem quam temporibus, saepe nobis, commodi ab ratione esse vero doloremque a?</p>
+    </section>
+
+    <section class="hidden">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem ratione consequatur nostrum sint porro fuga quia perferendis libero aliquam mollitia a commodi sequi facere quasi, repellat vero animi iusto quam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magnam nisi beatae earum facilis, eius eos totam. Delectus reiciendis voluptatibus neque repellat veniam nulla, alias illo, illum, distinctio expedita magni.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corrupti animi aut eaque quasi consectetur, odio fugit laborum voluptatem quam temporibus, saepe nobis, commodi ab ratione esse vero doloremque a?</p>
+    </section>
+
+
+</div>
+
+<script>
+
+    // navbar
+
+
+    // fade in content
+
+    const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    
+
+</script>
+
+</body>
+</html>
